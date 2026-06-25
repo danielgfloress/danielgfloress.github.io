@@ -1,1 +1,5 @@
 media/video/
+media/foto/**/*.jpg
+media/foto/**/*.jpeg
+media/foto/**/*.CR2
+media/foto/**/*.cr2

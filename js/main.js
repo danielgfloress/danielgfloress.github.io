@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Contenedor de vídeo en lightbox (lo creamos dinámicamente)
     let lbVideo = null;
+    let lbVimeo = null;
 
     function clearLightboxMedia() {
         lbImg.style.display = 'none';
@@ -99,6 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
             lbVideo.remove();
             lbVideo = null;
         }
+        if (lbVimeo) {
+            lbVimeo.remove();
+            lbVimeo = null;
+        }
     }
 
     function showInLightbox(item) {
@@ -106,7 +111,23 @@ document.addEventListener('DOMContentLoaded', () => {
         lbTitle.textContent = item.dataset.title;
         lbCategory.textContent = item.dataset.category;
 
-        if (item.dataset.video) {
+        if (item.dataset.vimeo) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'relative mx-auto w-[min(92vw,46.125vh)] h-[82vh] max-h-[82vh]';
+            wrapper.style.aspectRatio = '9 / 16';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = item.dataset.vimeo;
+            iframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share';
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+            iframe.title = item.querySelector('iframe')?.title || 'Vimeo video';
+            iframe.className = 'absolute inset-0 w-full h-full';
+            iframe.setAttribute('frameborder', '0');
+
+            wrapper.appendChild(iframe);
+            lbVimeo = wrapper;
+            lbImg.parentNode.insertBefore(wrapper, lbImg);
+        } else if (item.dataset.video) {
             // Es un vídeo de galería → mostrar vídeo en lightbox
             lbVideo = document.createElement('video');
             lbVideo.src = item.dataset.video;
