@@ -1,0 +1,261 @@
+/* ═══════════════════════════════════════════════════
+   DANIEL GARCÍA FLORES — Custom Styles
+   Complementa Tailwind con animaciones y efectos
+═══════════════════════════════════════════════════ */
+
+/* ── Shutter reveal (letras del hero) ── */
+.shutter-char {
+  display: inline-block;
+  opacity: 0;
+  transform: scaleY(0) translateY(-20px);
+  transform-origin: top center;
+  animation: shutterOpen 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(0.06s * var(--i) + 0.3s);
+}
+
+@keyframes shutterOpen {
+  0%   { opacity: 0; transform: scaleY(0) translateY(-20px); }
+  60%  { opacity: 1; transform: scaleY(1.05) translateY(2px); }
+  100% { opacity: 1; transform: scaleY(1) translateY(0); }
+}
+
+/* ── Fade reveal para subtítulos del hero ── */
+.reveal-fade {
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: var(--delay, 0.8s);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scroll reveal (controlado por JS con IntersectionObserver) ── */
+.reveal-up {
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(40px);
+}
+
+.reveal-up.visible {
+  opacity: 1 !important;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Gallery Grid — layout asimétrico personalizado ── */
+/* ─────────────────────────────────────
+   PORTFOLIO FOTOS
+───────────────────────────────────── */
+
+.photo-grid {
+  columns: 3 320px;
+  column-gap: 12px;
+}
+
+.photo-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: #141414;
+}
+
+.photo-item img {
+  width: 100%;
+  display: block;
+  transition: transform .6s cubic-bezier(.22,1,.36,1);
+}
+
+.photo-item:hover img {
+  transform: scale(1.04);
+}
+
+.photo-item.vertical img {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.photo-item.horizontal img {
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+
+/* ─────────────────────────────────────
+   VIDEOS GRID
+───────────────────────────────────── */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  gap: 12px;
+}
+
+.video-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: #141414;
+}
+
+.video-item video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.video-item::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.2);
+  transition:.3s;
+}
+
+.video-item:hover::after{
+  background:rgba(0,0,0,.05);
+}
+
+.video-play {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+}
+
+.video-play svg{
+  width:60px;
+  height:60px;
+}
+
+@media (max-width:768px){
+
+  .photo-grid{
+      columns:1;
+  }
+
+}
+
+/* ── Navbar scrolled ── */
+#navbar.scrolled {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(184, 151, 42, 0.15);
+}
+
+/* ── Scroll indicator line animation ── */
+.scroll-line {
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 0.8; transform: scaleY(1.2); }
+}
+
+/* ── Gallery items: zoom en hover ── */
+.gallery-item img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* ── Lightbox ── */
+#lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-content img {
+  animation: lightboxIn 0.3s ease;
+}
+
+@keyframes lightboxIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Video overlay ── */
+#video-overlay.playing {
+  opacity: 0;
+}
+
+#showreel-video:hover + #video-overlay,
+#video-overlay:hover {
+  opacity: 1 !important;
+}
+
+/* ── Transition duration 400 (Tailwind no tiene 400ms) ── */
+.transition-all.duration-400 {
+  transition-duration: 400ms;
+}
+
+/* ── Hamburger activo ── */
+#menu-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+#menu-btn.active .hamburger-line:nth-child(2) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+#menu-btn.active .hamburger-line:nth-child(3) {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+/* ── Scroll suave general ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Selección de texto en dorado ── */
+::selection {
+  background-color: rgba(184, 151, 42, 0.35);
+  color: #E8E8E8;
+}
+
+/* ── Scrollbar custom ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #B8972A; border-radius: 2px; }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .shutter-char,
+  .reveal-fade,
+  .reveal-up,
+  .reveal-left,
+  .reveal-right {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

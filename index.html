@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel García Flores — Fotógrafo & Videógrafo</title>
+    <meta name="description"
+        content="Portfolio de Daniel García Flores, fotógrafo y videógrafo. Proyectos visuales que cuentan historias." />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        base: '#0A0A0A',
+                        surface: '#141414',
+                        card: '#1C1C1C',
+                        gold: '#B8972A',
+                        'gold-light': '#D4AF5A',
+                        'text-primary': '#E8E8E8',
+                        'text-muted': '#6B6B6B',
+                    },
+                    fontFamily: {
+                        display: ['"Cormorant Garamond"', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-base text-text-primary font-body antialiased overflow-x-hidden">
+
+    <!-- ═══════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-6 flex items-center justify-between">
+            <a href="#hero"
+                class="font-display text-lg font-light tracking-widest text-text-primary hover:text-gold transition-colors duration-300">
+                DGF
+            </a>
+            <ul class="hidden md:flex items-center gap-10">
+                <li><a href="#portfolio"
+                        class="nav-link text-xs tracking-[0.2em] uppercase text-text-muted hover:text-gold transition-colors duration-300">Portfolio</a>
+                </li>
+                <li><a href="#showreel"
+                        class="nav-link text-xs tracking-[0.2em] uppercase text-text-muted hover:text-gold transition-colors duration-300">Showreel</a>
+                </li>
+                <li><a href="#sobre-mi"
+                        class="nav-link text-xs tracking-[0.2em] uppercase text-text-muted hover:text-gold transition-colors duration-300">Sobre
+                        mí</a></li>
+                <li><a href="#contacto"
+                        class="nav-link text-xs tracking-[0.2em] uppercase text-text-muted hover:text-gold transition-colors duration-300">Contacto</a>
+                </li>
+            </ul>
+            <!-- Mobile hamburger -->
+            <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-1" aria-label="Menú">
+                <span class="hamburger-line block w-6 h-px bg-text-primary transition-all duration-300"></span>
+                <span class="hamburger-line block w-6 h-px bg-text-primary transition-all duration-300"></span>
+                <span class="hamburger-line block w-4 h-px bg-text-primary transition-all duration-300 self-end"></span>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-card px-6 py-8">
+            <ul class="flex flex-col gap-6">
+                <li><a href="#portfolio"
+                        class="mobile-nav-link text-sm tracking-[0.2em] uppercase text-text-muted hover:text-gold transition-colors">Portfolio</a>
+                </li>
+                <li><a href="#showreel"
+                        class="mobile-nav-link text-sm tracking-[0.2em] uppercase text-text-muted hover:text-gold transition-colors">Showreel</a>
+                </li>
+                <li><a href="#sobre-mi"
+                        class="mobile-nav-link text-sm tracking-[0.2em] uppercase text-text-muted hover:text-gold transition-colors">Sobre
+                        mí</a></li>
+                <li><a href="#contacto"
+                        class="mobile-nav-link text-sm tracking-[0.2em] uppercase text-text-muted hover:text-gold transition-colors">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+    <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
+
+        <!-- Parallax background image -->
+        <div id="hero-bg" class="absolute inset-0 scale-110">
+            <!-- Reemplaza esta imagen con tu foto hero -->
+            <img src="media/foto/DSC00153.jpg" alt="Hero background" class="w-full h-full object-cover opacity-30" />
+            <div class="absolute inset-0 bg-gradient-to-b from-base/60 via-base/30 to-base"></div>
+        </div>
+
+        <!-- Hero content -->
+        <div class="relative z-10 text-center px-6">
+            <p class="reveal-fade text-xs tracking-[0.4em] uppercase text-gold mb-8 opacity-0">
+                Fotógrafo &amp; Videógrafo
+            </p>
+
+            <!-- Shutter reveal name -->
+            <h1 class="font-display font-light leading-none mb-6" aria-label="Daniel García Flores">
+                <span class="shutter-word block text-[clamp(3rem,10vw,9rem)] tracking-tight">
+                    <span class="shutter-char" style="--i:0">D</span><span class="shutter-char"
+                        style="--i:1">a</span><span class="shutter-char" style="--i:2">n</span><span
+                        class="shutter-char" style="--i:3">i</span><span class="shutter-char"
+                        style="--i:4">e</span><span class="shutter-char" style="--i:5">l</span>
+                </span>
+                <span class="shutter-word block text-[clamp(2rem,7vw,6.5rem)] tracking-[0.15em] text-gold">
+                    <span class="shutter-char" style="--i:6">G</span><span class="shutter-char"
+                        style="--i:7">a</span><span class="shutter-char" style="--i:8">r</span><span
+                        class="shutter-char" style="--i:9">c</span><span class="shutter-char"
+                        style="--i:10">í</span><span class="shutter-char" style="--i:11">a</span>
+                </span>
+                <span class="shutter-word block text-[clamp(2rem,7vw,6.5rem)] tracking-[0.15em]">
+                    <span class="shutter-char" style="--i:12">F</span><span class="shutter-char"
+                        style="--i:13">l</span><span class="shutter-char" style="--i:14">o</span><span
+                        class="shutter-char" style="--i:15">r</span><span class="shutter-char"
+                        style="--i:16">e</span><span class="shutter-char" style="--i:17">s</span>
+                </span>
+            </h1>
+
+            <div class="reveal-fade opacity-0 mt-12" style="--delay:1.5s">
+                <a href="#portfolio"
+                    class="inline-block border border-gold text-gold text-xs tracking-[0.3em] uppercase px-8 py-4 hover:bg-gold hover:text-base transition-all duration-400">
+                    Ver trabajo
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+            <div class="w-px h-12 bg-gradient-to-b from-text-muted to-transparent scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PORTFOLIO / GALERÍA
+  ═══════════════════════════════════════════ -->
+    <section id="portfolio" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
+
+        <div class="reveal-up opacity-0 mb-16">
+            <p class="text-xs tracking-[0.4em] uppercase text-gold mb-4">Proyectos</p>
+            <h2 class="font-display font-light text-5xl md:text-7xl leading-none">Portfolio</h2>
+        </div>
+
+        <!-- Custom CSS Grid — layout asimétrico -->
+        <div id="gallery" class="photo-grid">
+
+            <!-- HORIZONTALES -->
+
+            <div class="photo-item horizontal gallery-item" data-category="Fotografía"
+                data-src="media/foto/horizontal/DSC00184.jpg">
+                <img src="media/foto/horizontal/DSC00184.jpg" alt="">
+            </div>
+
+            <div class="photo-item horizontal gallery-item" data-category="Fotografía"
+                data-src="media/foto/horizontal/DSC00191.jpg">
+                <img src="media/foto/horizontal/DSC00191.jpg" alt="">
+            </div>
+
+            <div class="photo-item horizontal gallery-item" data-category="Fotografía"
+                data-src="media/foto/horizontal/DSC00213.jpg">
+                <img src="media/foto/horizontal/DSC00213.jpg" alt="">
+            </div>
+
+            <div class="photo-item horizontal gallery-item" data-category="Fotografía"
+                data-src="media/foto/horizontal/DSC00322.jpg">
+                <img src="media/foto/horizontal/DSC00322.jpg" alt="">
+            </div>
+
+            <div class="photo-item horizontal gallery-item" data-category="Fotografía"
+                data-src="media/foto/horizontal/DSC00556.jpg">
+                <img src="media/foto/horizontal/DSC00556.jpg" alt="">
+            </div>
+
+            <div class="photo-item horizontal gallery-item" data-category="Fotografía"
+                data-src="media/foto/horizontal/DSC00634.jpg">
+                <img src="media/foto/horizontal/DSC00634.jpg" alt="">
+            </div>
+
+            <div class="photo-item horizontal gallery-item" data-category="Fotografía"
+                data-src="media/foto/horizontal/DSC00804.jpg">
+                <img src="media/foto/horizontal/DSC00804.jpg" alt="">
+            </div>
+
+            <!-- VERTICALES -->
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00096.jpg">
+                <img src="media/foto/vertical/DSC00096.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00099.jpg">
+                <img src="media/foto/vertical/DSC00099.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00128.jpg">
+                <img src="media/foto/vertical/DSC00128.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00131-2.jpg">
+                <img src="media/foto/vertical/DSC00131-2.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00160.jpg">
+                <img src="media/foto/vertical/DSC00160.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00214.jpg">
+                <img src="media/foto/vertical/DSC00214.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00636.jpg">
+                <img src="media/foto/vertical/DSC00636.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00681.jpg">
+                <img src="media/foto/vertical/DSC00681.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00825.jpg">
+                <img src="media/foto/vertical/DSC00825.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00889.jpg">
+                <img src="media/foto/vertical/DSC00889.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00895.jpg">
+                <img src="media/foto/vertical/DSC00895.jpg" alt="">
+            </div>
+
+            <div class="photo-item vertical gallery-item" data-category="Fotografía"
+                data-src="media/foto/vertical/DSC00897.jpg">
+                <img src="media/foto/vertical/DSC00897.jpg" alt="">
+            </div>
+
+        </div>
+
+        <!--
+      FOTOS RESTANTES (no mostradas en el grid):
+      DSC00099, DSC00131-2, DSC00184, DSC00191, DSC00214,
+      DSC00636, DSC00681, DSC00825, DSC00895, DSC00897
+      → Puedes ampliar el grid añadiendo más filas o crear una segunda sección.
+    -->
+
+    </section>
+
+    <section class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
+
+        <div class="mb-16 reveal-up opacity-0">
+
+            <h2 class="font-display font-light text-5xl md:text-7xl leading-none">
+                Vídeos
+            </h2>
+        </div>
+
+        <div class="video-grid">
+
+
+            <div class="video-item gallery-item" data-category="Vídeo" data-video="media/video/vertical/Voytoss9.0.mp4">
+
+                <div style="padding:177.78% 0 0 0;position:relative;"><iframe
+                        src="https://player.vimeo.com/video/1204546498?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Voytoss9.0"></iframe>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+
+                <div class="video-play">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="text-gold">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="video-item gallery-item" data-category="Vídeo" data-video="media/video/vertical/ReelAlvaro.mp4">
+
+                <div style="padding:177.78% 0 0 0;position:relative;"><iframe
+                        src="https://player.vimeo.com/video/1204542813?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                        title="Reel Toma de Marcas"></iframe></div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+
+                <div class="video-play">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="text-gold">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       SHOWREEL
+  ═══════════════════════════════════════════ -->
+    <section id="showreel" class="relative py-24 md:py-36 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="reveal-up opacity-0 mb-16">
+                <h2 class="font-display font-light text-5xl md:text-7xl leading-none">Showreel</h2>
+            </div>
+        </div>
+
+        <!-- Video fullwidth -->
+        <div class="reveal-up opacity-0 relative group">
+            <div class="relative overflow-hidden bg-card">
+                <!-- Reemplaza el src por tu archivo .mp4 local, ej: assets/videos/showreel.mp4 -->
+                <div style="padding:56.25% 0 0 0;position:relative;"><iframe id="showreel-vimeo"
+                        src="https://player.vimeo.com/video/1204267020?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="MaratonMilan"></iframe>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+
+
+                <!-- Overlay con botón play -->
+                <div id="video-overlay"
+                    class="absolute inset-0 flex flex-col items-center justify-center bg-base/50 cursor-pointer transition-opacity duration-500">
+                    <div
+                        class="w-20 h-20 border-2 border-gold rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg id="play-icon" class="w-8 h-8 text-gold ml-1.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        <svg id="pause-icon" class="w-8 h-8 text-gold hidden" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                        </svg>
+                    </div>
+                    <p class="text-xs tracking-[0.3em] uppercase text-text-muted">Reproducir showreel</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative line -->
+        <div class="max-w-7xl mx-auto px-6 md:px-12 mt-16">
+            <div class="h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       SOBRE MÍ
+  ═══════════════════════════════════════════ -->
+    <section id="sobre-mi" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+            <!-- Foto -->
+            <div class="reveal-left opacity-0 relative">
+                <div class="relative">
+                    <!-- Reemplaza por tu foto: assets/images/foto-perfil.jpg -->
+                    <img src="media/foto/IMG_4780.jpg" alt="Daniel García Flores"
+                        class="w-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                    <!-- Gold frame accent -->
+                    <div class="absolute -bottom-4 -right-4 w-full h-full border border-gold/30 pointer-events-none">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto -->
+            <div class="reveal-right opacity-0">
+                <p class="text-xs tracking-[0.4em] uppercase text-gold mb-6">Sobre mí</p>
+                <h2 class="font-display font-light text-4xl md:text-5xl leading-tight mb-8">
+                    Cada imagen tiene<br />
+                    <em>una historia que contar</em>
+                </h2>
+                <div class="space-y-4 text-text-muted leading-relaxed font-light text-sm">
+                    <p>
+                        Soy Daniel García Flores, fotógrafo y videógrafo con una obsesión por la luz,
+                        el tiempo y las emociones que se quedan atrapadas en un fotograma.
+                    </p>
+                    <p>
+                        Mi trabajo nace de la convicción de que las imágenes más poderosas no se toman,
+                        se esperan.
+                    </p>
+                    <p>
+                        Cada proyecto es un
+                        nuevo reto y una oportunidad para ir más lejos.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       CONTACTO
+  ═══════════════════════════════════════════ -->
+    <section id="contacto" class="py-24 md:py-36 px-6 md:px-12 bg-surface">
+        <div class="max-w-4xl mx-auto text-center">
+
+            <div class="reveal-up opacity-0">
+                <p class="text-xs tracking-[0.4em] uppercase text-gold mb-6">Hablemos</p>
+                <h2 class="font-display font-light text-5xl md:text-7xl leading-none mb-6">
+                    ¿Tienes un<br /><em>proyecto en mente?</em>
+                </h2>
+                <p class="text-text-muted font-light text-sm leading-relaxed max-w-md mx-auto mb-12">
+                    Cuéntame tu idea. Estoy disponible para proyectos de fotografía, vídeo,
+                    documentales y colaboraciones creativas.
+                </p>
+            </div>
+
+            <div class="reveal-up opacity-0">
+                <!-- Email CTA -->
+                <a href="mailto:danielgarciaf07@gmail.com"
+                    class="group inline-flex items-center gap-4 border border-gold text-gold px-10 py-5 hover:bg-gold hover:text-base transition-all duration-400 text-sm tracking-[0.2em] uppercase mb-16">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                    danielgarciaf07@gmail.com
+                </a>
+
+                <!-- Redes sociales -->
+                <div class="flex items-center justify-center gap-8">
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/" target="_blank" rel="noopener"
+                        class="flex items-center gap-2 text-text-muted hover:text-gold transition-colors duration-300 text-xs tracking-[0.2em] uppercase group">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                        Instagram
+                    </a>
+
+                    <span class="text-card">|</span>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener"
+                        class="flex items-center gap-2 text-text-muted hover:text-gold transition-colors duration-300 text-xs tracking-[0.2em] uppercase group">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+    <footer class="py-8 px-6 md:px-12 border-t border-card">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="font-display text-lg font-light tracking-widest text-text-muted">DGF</p>
+            <p class="text-xs text-text-muted tracking-widest">
+                © <span id="year"></span> Daniel García Flores. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════
+       LIGHTBOX
+  ═══════════════════════════════════════════ -->
+    <div id="lightbox"
+        class="fixed inset-0 z-[100] bg-base/95 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-all duration-400">
+        <button id="lightbox-close"
+            class="absolute top-6 right-8 text-text-muted hover:text-gold transition-colors z-10">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <button id="lightbox-prev"
+            class="absolute left-4 md:left-8 text-text-muted hover:text-gold transition-colors z-10 p-2">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <div class="lightbox-content max-w-5xl max-h-[85vh] px-16">
+            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[75vh] object-contain mx-auto" />
+            <div class="mt-4 text-center">
+                <p id="lightbox-category" class="text-[10px] tracking-[0.3em] uppercase text-gold mb-1"></p>
+                <p id="lightbox-title" class="font-display text-2xl font-light"></p>
+            </div>
+        </div>
+        <button id="lightbox-next"
+            class="absolute right-4 md:right-8 text-text-muted hover:text-gold transition-colors z-10 p-2">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
