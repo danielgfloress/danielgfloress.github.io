@@ -246,6 +246,12 @@ html {
 ::-webkit-scrollbar-track { background: #0A0A0A; }
 ::-webkit-scrollbar-thumb { background: #B8972A; border-radius: 2px; }
 
+/* ── Botón email contacto ── */
+.email-btn {
+  transition: background-color 0.4s ease, color 0.4s ease;
+  /* Sin transition-all: evita que letter-spacing o font-size se animen en hover */
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .shutter-char,
@@ -257,5 +263,18 @@ html {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  #contacto a[href^="mailto"] {
+    display: flex;
+    width: fit-content;
+    max-width: calc(100vw - 48px);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 }
